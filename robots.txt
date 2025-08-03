@@ -10,6 +10,10 @@ Allow: /
 User-agent: Googlebot-Mobile
 Allow: /
 
+# Google AdMob app-ads.txt 크롤링 허용
+User-agent: Google-adstxt
+Disallow:
+
 # 기타 모든 검색 엔진 차단
 User-agent: *
 Disallow: /
