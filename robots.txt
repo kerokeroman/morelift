@@ -1,0 +1,20 @@
+# 구글 애널리틱스를 위한 Googlebot 허용
+User-agent: Googlebot
+Allow: /
+
+# 구글 이미지 봇 허용
+User-agent: Googlebot-Image
+Allow: /
+
+# 구글 모바일 봇 허용
+User-agent: Googlebot-Mobile
+Allow: /
+
+# 기타 모든 검색 엔진 차단
+User-agent: *
+Disallow: /
+
+# 구글 애널리틱스 추적 코드는 허용
+User-agent: Googlebot
+Allow: /analytics/
+Allow: /gtag/ 

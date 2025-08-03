@@ -1,0 +1,24 @@
+# 검색 엔진 크롤링 차단 (구글 제외)
+# robots.txt와 함께 사용하여 더 강력한 차단 효과
+
+# 구글 봇은 허용 (애널리틱스용)
+RewriteEngine On
+RewriteCond %{HTTP_USER_AGENT} (bingbot|slurp|msnbot|teoma|yandex|baiduspider|duckduckbot|facebookexternalhit|twitterbot|linkedinbot) [NC]
+RewriteRule .* - [F,L]
+
+# 추가 헤더 설정
+<IfModule mod_headers.c>
+    # 검색 엔진 캐싱 방지 (구글 제외)
+    Header set X-Robots-Tag "noindex, nofollow, noarchive, nosnippet, noimageindex"
+    
+    # 캐시 제어
+    Header set Cache-Control "no-cache, no-store, must-revalidate"
+    Header set Pragma "no-cache"
+    Header set Expires "0"
+</IfModule>
+
+# robots.txt 접근 허용
+<Files "robots.txt">
+    Order allow,deny
+    Allow from all
+</Files> 
